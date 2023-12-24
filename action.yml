@@ -40,6 +40,10 @@ inputs:
   force:
     description: 'Determines if force push is used'
     required: false
+  updates_only:
+    description: 'Determines if all files should be added'
+    required: false
+    default: true
   tags:
     description: 'Determines if --tags is used'
     required: false

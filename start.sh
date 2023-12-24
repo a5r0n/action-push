@@ -46,7 +46,11 @@ git config http.sslVerify false
 git config --local user.email "${INPUT_AUTHOR_EMAIL}"
 git config --local user.name "${INPUT_AUTHOR_NAME}"
 
-git add -A
+if ${INPUT_UPDATES_ONLY}; then
+    git add -u
+else
+    git add -A
+fi
 
 if ${INPUT_AMEND}; then
     if [ -n "${INPUT_COAUTHOR_EMAIL}" ] && [ -n "${INPUT_COAUTHOR_NAME}" ]; then
